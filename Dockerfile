@@ -1,6 +1,6 @@
-FROM node:12.16-alpine AS node
+FROM node:12.16-stretch AS node
 
-FROM ruby:2.4-alpine
+FROM ruby:2.4-stretch
 
 COPY --from=node /usr/local/bin/node /usr/local/bin/node
 COPY --from=node /opt/yarn-* /opt/yarn
