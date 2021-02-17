@@ -1,6 +1,7 @@
 FROM node:12.16 AS node
 
 FROM ruby:2.4.0
+ENV BUNDLER_VERSION=2.1.4
 
 # Enable jemalloc
 RUN apt-get update && apt-get install -y libjemalloc-dev libjemalloc1 && rm -rf /var/lib/apt/lists/*
