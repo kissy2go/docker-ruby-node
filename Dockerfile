@@ -1,7 +1,6 @@
 FROM node:12.16 AS node
 
 FROM ruby:2.4.10
-ENV BUNDLER_VERSION=2.1.4
 
 COPY --from=node /usr/local/bin/node /usr/local/bin/node
 COPY --from=node /opt/yarn-* /opt/yarn
@@ -14,3 +13,6 @@ RUN apt-get update \
     libjemalloc2 \
   && rm -rf /var/lib/apt/lists/*
 ENV LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2
+
+ENV BUNDLER_VERSION=2.1.4
+RUN gem install bundler -v $BUNDLER_VERSION
