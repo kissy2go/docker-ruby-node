@@ -1,6 +1,6 @@
 FROM node:12.16 AS node
 
-FROM ruby:2.4.0
+FROM ruby:2.4.10
 ENV BUNDLER_VERSION=2.1.4
 
 # Enable jemalloc
